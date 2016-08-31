@@ -54,7 +54,7 @@ chmod +x /usr/local/bin/docker-compose
 
 ```bash
 docker run -i -t --rm \
--e TIMEZONE=Europe/Berlin \
+-e TIMEZONE=Asia/Shanghai \
 -e MYSQL_ROOT_PASSWORD=securepassword \
 benyoo/mariadb:10.1.14
 ```
@@ -67,7 +67,7 @@ For known limitations have a look at https://mariadb.com/kb/en/mariadb/mariadb-g
 
 ```bash
 docker run -i -t --rm \
--e TIMEZONE=Europe/Berlin \
+-e TIMEZONE=Asia/Shanghai \
 -e MYSQL_ROOT_PASSWORD=test \
 -e REPLICATION_PASSWORD=test \
 -e GALERA=On \
@@ -81,7 +81,7 @@ benyoo/mariadb:10.1.14 --wsrep-new-cluster
 
 ```bash
 docker run -i -t --rm \
--e TIMEZONE=Europe/Berlin \
+-e TIMEZONE=Asia/Shanghai \
 -e MYSQL_ROOT_PASSWORD=test \
 -e REPLICATION_PASSWORD=test \
 -e GALERA=On \
