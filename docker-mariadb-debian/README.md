@@ -38,7 +38,7 @@
 docker run -i -t --rm \
 -e TIMEZONE=Europe/Berlin \
 -e MYSQL_ROOT_PASSWORD=securepassword \
-hauptmedia/mariadb:10.1
+benyoo/mariadb:10.1
 ```
 ## Running MariaDB in Galera Cluster Mode
 
@@ -56,7 +56,7 @@ docker run -i -t --rm \
 -e NODE_NAME=node1 \
 -e CLUSTER_NAME=test \
 -e CLUSTER_ADDRESS=gcomm://ipOrHost1,ipOrHost2,ipOrHost3 \
-hauptmedia/mariadb:10.1 --wsrep-new-cluster
+benyoo/mariadb:10.1 --wsrep-new-cluster
 ```
 
 ### Joining a node to the cluster
@@ -70,7 +70,7 @@ docker run -i -t --rm \
 -e NODE_NAME=node2 \
 -e CLUSTER_NAME=test \
 -e CLUSTER_ADDRESS=gcomm://ipOrHost1,ipOrHost2,ipOrHost3 \
-hauptmedia/mariadb:10.1
+benyoo/mariadb:10.1
 ```
 
 Please note: if you don't specify the timezone the server will run with UTC time
