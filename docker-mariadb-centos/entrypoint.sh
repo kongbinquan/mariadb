@@ -1,3 +1,12 @@
+#!/bin/bash
+#########################################################################
+# File Name: entrypoint.sh
+# Author: LookBack
+# Email: admin#dwhd.org
+# Version:
+# Created Time: 2016年09月10日 星期六 22时37分33秒
+#########################################################################
+
 set -e
 
 TIMEZONE=${TIMEZONE:-Asia/Shanghai}
