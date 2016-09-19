@@ -4,8 +4,8 @@ MAINTAINER from www.dwhd.org by lookback (mondeolove@gmail.com)
 ARG VERSION=${VERSION:-10.0.27}
 #ARG LOCAL_REPO=${LOCAL_REPO:-disable}
 
-ENV DATA_DIR=/data/mariadb
-#	INSTALL_DIR=/usr/local/mariadb
+ENV DATA_DIR=/data/mariadb \
+	INSTALL_DIR=/usr/local/mariadb
 
 RUN set -x && \
 	[ ! -d "$(dirname ${DATA_DIR})" ] && mkdir -p $(dirname ${DATA_DIR}) && \
@@ -19,7 +19,8 @@ RUN set -x && \
 	rm -rf /var/cache/{yum,ldconfig} /var/lib/mysql/* && \
 	mkdir -pv --mode=0755 /var/cache/{yum,ldconfig}
 
-ENV TERM=linux \
+ENV 	PATH=${INSTALL_DIR}/bin:$PATH \
+	TERM=linux \
 	MAX_CONNECTIONS=100 \
 	PORT1=3306 PORT2=4444 PORT3=4567 PORT4=4568 \
 	MAX_ALLOWED_PACKET=16M \
