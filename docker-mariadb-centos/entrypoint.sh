@@ -20,7 +20,7 @@ WSREP_SST_METHOD=${WSREP_SST_METHOD:-xtrabackup-v2}
 [ "${1:0:1}" = '-' ] && set -- mysqld "$@"
 [ -z "$@" ] && set -- mysqld "$@"
 
-if [[ ${DEFAULT_CONF} =~ ^[dD][iI][sS][aA][bB][lL][eE]$ ]]; then
+if [[ ! ${DEFAULT_CONF} =~ ^[dD][iI][sS][aA][bB][lL][eE]$ ]]; then
 	sed -ri "s@^(port).*@\1=${PORT1}@" /etc/my.cnf
 	sed -ri "s@^(basedir).*@\1=${INSTALL_DIR}@" /etc/my.cnf
 	sed -ri "s@^(datadir).*@\1=${DATA_DIR}@" /etc/my.cnf
