@@ -18,7 +18,7 @@ WSREP_SST_METHOD=${WSREP_SST_METHOD:-xtrabackup-v2}
 
 [ -n "$TIMEZONE" ] && { rm -rf /etc/localtime && ln -s /usr/share/zoneinfo/$TIMEZONE /etc/localtime; }
 [ "${1:0:1}" = '-' ] && set -- mysqld "$@"
-[ -z "$@" ] && set -- mysqld "$@"
+[[ -z "$@" ]] && set -- mysqld "$@"
 
 if [[ ! ${DEFAULT_CONF} =~ ^[dD][iI][sS][aA][bB][lL][eE]$ ]]; then
 	sed -ri "s@^(port).*@\1=${PORT1}@" /etc/my.cnf
