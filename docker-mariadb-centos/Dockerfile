@@ -1,7 +1,7 @@
 FROM benyoo/centos:7.2.1511.20160910
 MAINTAINER from www.dwhd.org by lookback (mondeolove@gmail.com)
 
-ARG VERSION=${VERSION:-10.0.27}
+ARG VERSION=${VERSION:-10.2.2}
 #ARG LOCAL_REPO=${LOCAL_REPO:-disable}
 
 ENV DATA_DIR=/data/mariadb \
